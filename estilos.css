@@ -1,0 +1,174 @@
+:root {
+  /* exemplos já definidos */
+  --color-text: white;
+  --color-bg: linear-gradient(to left, rgb(73, 70, 70), rgb(164, 162, 162), rgb(73, 70, 70));
+  --color-header-bg: rgb(58, 57, 57);
+  --color-card-bg: white;
+  --color-card-text: black;
+  --color-card-border: gray;
+  --color-card-shadow: #000000;
+  --color-footer-bg: black;
+  --color-footer-shadow: #313131;
+  --color-link: gray;
+  --color-link-hover: lightgray;
+  --color-autor-data: #888888;
+  --color-laranja: orange;
+  --color-cinza: #aaa;
+  --color-ciano: #00ffff;
+
+  --space-0: 0;
+  --space-px: 1px;
+  --space-sm: 10px;
+  --space-md: 15px;
+  --space-lg: 20px;
+  --space-xl: 25px;
+  --space-2xl: 30px;
+  --space-3xl: 40px;
+  --space-4xl: 50px;
+  --space-5xl: 200px;
+
+  --radius-md: 10px;
+  --radius-0: 0;
+
+  --shadow-md: 5px 5px 15px 5px var(--color-card-shadow);
+  --shadow-footer: -5px -5px 10px 10px var(--color-footer-shadow);
+  --shadow-none: 0 0 0 0;
+
+  --font-base: Arial, Helvetica, sans-serif;
+  --font-qs: "Quicksand", sans-serif;
+  --font-tilt: "Tilt Neon", sans-serif;
+
+  --line-height-2: 2;
+  --letter-spacing-10: 10px;
+}
+
+/* desktop: asides fixos ao rolar */
+@media (min-width: 900px) {
+
+  main {
+    position: relative;
+    min-height: 100vh;
+  }
+
+  aside.card,
+  .aside-dicas {
+    position: sticky;
+    top: 20px;
+    align-self: flex-start;
+  }
+
+  aside.card {
+    flex: 0 0 220px;
+  }
+
+  .aside-dicas {
+    flex: 0 0 220px;
+    margin-left: var(--space-lg);
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: var(--radius-md);
+    padding: var(--space-xl);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+}
+
+/* mobile: tudo em coluna */
+@media (max-width: 900px) {
+
+  aside.card,
+  .aside-dicas {
+    position: static;
+    margin: var(--space-md) 0;
+    flex: none;
+  }
+
+  main {
+    flex-direction: column;
+    width: 100%;
+  }
+}
+
+/* desktop: mostra a nav normal */
+nav {
+  margin: var(--space-lg);
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav li {
+  display: inline;
+  margin: 0 var(--space-md);
+}
+
+/* mobile: esconde a nav e mostra o botão sanduíche */
+@media (max-width: 900px) {
+
+  nav {
+    display: none;
+  }
+
+  .menu-toggle {
+    margin: 0 auto var(--space-md);
+    text-align: center;
+  }
+
+  #btn-menu {
+    padding: var(--space-sm) var(--space-lg);
+    background-color: var(--color-header-bg);
+    color: var(--color-text);
+    border: var(--space-px) solid currentColor;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+  }
+
+  nav.ativo {
+    display: block;
+  }
+
+  nav.ativo ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  nav.ativo li {
+    margin: 0 var(--space-md) var(--space-sm);
+    display: block;
+  }
+
+  nav.ativo a {
+    display: block;
+    padding: 0.5em 1em;
+  }
+}
+
+.tabela-complexa {
+  width: 100%;
+  border-collapse: collapse;
+  margin: var(--space-lg) 0;
+  text-align: center;
+}
+
+.tabela-complexa caption {
+  text-align: left;
+  margin-bottom: var(--space-lg);
+  font-weight: bold;
+}
+
+.tabela-complexa th,
+.tabela-complexa td {
+  border: 1px solid var(--color-card-border);
+  padding: var(--space-sm);
+}
+
+.tabela-complexa thead {
+  background-color: var(--color-header-bg);
+  color: var(--color-text);
+}
+
+.tabela-complexa tbody tr:nth-child(even) {
+  background-color: rgba(0, 0, 0, 0.05);
+}
